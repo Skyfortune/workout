@@ -29,4 +29,17 @@ public class RoutineRepository {
 	public ArrayList<Routine>getAllRoutines() {
 		return listofRoutine;
 	}
+	
+	public Routine getRoutineById(String routineId) {
+		Routine routineById = null;
+		
+		for(int i =0; i<listofRoutine.size(); i++) {
+			Routine routine = listofRoutine.get(i);
+			if (routine != null && routine.getRoutine_id() != null && routine.getRoutine_id().equals(routineById)) {
+				routineById = routine;
+				break;
+			}
+		}
+		return routineById;
+	}
 }

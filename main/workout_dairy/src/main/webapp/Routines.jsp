@@ -36,11 +36,13 @@
         <div class="col-md-4">
         	<h3><%=routine.getRname() %></h3>
         	<p><%=routine.getCategory() %>
+        	<p><%=routine.getText() %>
         	<p><%=routine.getterm() %>Week
         	<br>
-        	<button type="button" href="#" class="btn btn-secondary">자세히</button>
-        	<br>
-        	<button type="button" href="#" class="btn btn-success">실행</button>
+        	<a class="btn btn-secondary" 
+        		href="./routine.jsp?id=<%=routine.getRoutine_id()%>" 
+        		role="button">자세히</a>
+        	<a class="btn btn btn-success" href="#2" role="button">바로 실행</a>
         	
         </div>
         <%
