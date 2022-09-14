@@ -22,7 +22,6 @@
 </sql:query>
 
 
-	
 	<title>회원 수정</title>
 </head>
 <body onload="init()">

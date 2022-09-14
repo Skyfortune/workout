@@ -33,7 +33,7 @@
            	<li style="padding-top: 7px; color:white"><%=sessionId%>님 오늘도 득근하세요!</li>
            <li class="nav-item"><a class="nav-link" href="<c:url value="/member/logoutMember.jsp"/>">Logout</a></li>
            <li class="nav-item"><a class="nav-link" href="<c:url value="/member/updateMember.jsp"/>">Fix info</a></li>
-           <li class="nav-item"><a class="nav-link" href="<c:url value="./my_workout.jsp"/>">My work out</a></li>
+           <li class="nav-item"><a class="nav-link" href="<c:url value="/Routine/showyou.jsp"/>">My work out</a></li>
            </c:otherwise>
            </c:choose>
            <li class="nav-item">

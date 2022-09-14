@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="dto.Routine"%>
-<jsp:useBean id="routineDAO" class="dao.RoutineRepository" scope="session" />
+<%@ page import="dao.RoutineRepository"%>
 <html>
 <head>
 <link rel="stylesheet"
@@ -17,27 +17,48 @@
 		</div>
 	</div>
 	<%
+//		String id = request.getParameter("id");
+//		Routine routine = routineDAO.getRoutineById(id);
+	%>
+	<%@ include file="dbconn.jsp" %>
+	<%
 		String id = request.getParameter("id");
-		Routine routine = routineDAO.getRoutineById(id);
+		String sql = "select * from routine where p_id = '"+id+"'";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next())
+		{
 	%>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h3><%=routine.getRname()%></h3>
-				<p><%=routine.getCategory()%>
+				<h3><%=rs.getString("p_name")%></h3>
+				<p><%=rs.getString("p_category")%>
 				<p>
 					<b>훈련기간</b> :
-					<%=routine.getterm()%>
+					<%=rs.getString("p_term")%>
 					주
 				<p>
 					<b>상세정보</b> :
-					<%=routine.getText()%>
-					<a href=" # " class="btn btn-success">루틴 실행</a> <a
+					<%=rs.getString("p_text")%><br>
+					<a href="./workout_info.jsp" class="btn btn-success">루틴 실행</a> <a
 						href="./routine.jsp" class="btn btn-secondary"> 루틴 목록 </a>
 			</div>
 		</div>
 		<hr>
 	</div>
+	<%
+		}
+		if (rs != null)
+			rs.close();
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+		conn.close();
+	%>
+	
+	
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

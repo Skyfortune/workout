@@ -9,7 +9,7 @@
 <title>login page</title>
 </head>
 <body>
-<%@ include file="menu.jsp"%>
+<jsp:include page="menu.jsp" />
 
 	<div class="container">
 		<h1 class="display-3">LOGIN</h1>

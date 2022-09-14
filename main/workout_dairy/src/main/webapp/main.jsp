@@ -11,7 +11,7 @@
 <title>main page</title>
 </head>
 <body>
-	<%@ include file="menu.jsp"%>
+	<jsp:include page="menu.jsp" />
 	<%!String greeting = "workout_mate main";
 	String tagline = "better today than yesterday";%>
 	<div class="jumbotron">

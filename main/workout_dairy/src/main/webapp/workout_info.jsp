@@ -22,12 +22,11 @@
 
 		<div class="form-group">
 			<form action="./processWorkout_info.jsp" class="form-horizontal" method="post">
-				<label>무슨무슨 운동종목</label> <label class="col-form-label"
-					for="inputDefault">무게</label> <input type="text"
-					class="form-control" placeholder="kg단위로 적어주세요" id="inputDefault">
-				<label class="col-form-label" for="inputDefault">횟수</label> <input
-					type="text" class="form-control" placeholder="10이하의 횟수를 권장합니다."
-					id="inputDefault">
+				<label>무슨무슨 운동종목</label> 
+				<label class="col-form-label" for="inputDefault">무게</label> 
+					<input type="text" class="form-control" placeholder="kg단위로 적어주세요" id="inputDefault">
+				<label class="col-form-label" for="inputDefault">횟수</label> 
+				<input type="text" class="form-control" placeholder="10이하의 횟수를 권장합니다." id="inputDefault">
 
 				<table>
 					<tr>
