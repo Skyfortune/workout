@@ -34,18 +34,58 @@
 
 <sql:setDataSource var="dataSource"
 	url="jdbc:oracle:thin:@localhost:1521:orcl" 
-	driver="oracle.jdbc.driver.OracleDriver" user="workout" password="1234" /> 
-
+	driver="oracle.jdbc.driver.OracleDriver" user="workout" password="1234" />
+	 
+<!-- 2주까지 -->
 <sql:update dataSource="${dataSource}" var="resultSet">
-   INSERT INTO mad_cow VALUES (?, ?, ?, ?, ?, ?, ?)
+   INSERT INTO mad_cow_plan VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     <sql:param value="<%=id%>" />
-	<sql:param value="<%=squat%>" />
-	<sql:param value="<%=deadlift%>" />
-	<sql:param value="<%=bench_press%>" />
-	<sql:param value="<%=military_press%>" />
-	<sql:param value="<%=barbell_row%>" />
-	<sql:param value="<%=term%>" />
+    <sql:param value="<%=term-6%>" />
+	<sql:param value="<%=squat*0.444%>" />
+	<sql:param value="<%=squat*0.444+2.5%>" />	
+	<sql:param value="<%=bench_press*0.444%>" />
+	<sql:param value="<%=military_press*0.444%>" />
+	<sql:param value="<%=barbell_row*0.444%>" />
+	<sql:param value="<%=deadlift*0.444%>" />	
 </sql:update>
+<!-- 4주까지 -->
+<sql:update dataSource="${dataSource}" var="resultSet">
+   INSERT INTO mad_cow VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    <sql:param value="<%=id%>" />
+    <sql:param value="<%=term-4%>" />
+	<sql:param value="<%=squat*0.444+2.5%>" />
+	<sql:param value="<%=squat*0.444+5%>" />	
+	<sql:param value="<%=bench_press*0.444+2.5%>" />
+	<sql:param value="<%=military_press*0.444+2.5%>" />
+	<sql:param value="<%=barbell_row*0.444+2.5%>" />
+	<sql:param value="<%=deadlift*0.444+5%>" />	
+</sql:update>
+<!-- 6주까지 -->
+<sql:update dataSource="${dataSource}" var="resultSet">
+   INSERT INTO mad_cow VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    <sql:param value="<%=id%>" />
+    <sql:param value="<%=term-2%>" />
+	<sql:param value="<%=squat*0.444+5%>" />
+	<sql:param value="<%=squat*0.444+7.5%>" />	
+	<sql:param value="<%=bench_press*0.444+5%>" />
+	<sql:param value="<%=military_press*0.444+5%>" />
+	<sql:param value="<%=barbell_row*0.444+5%>" />
+	<sql:param value="<%=deadlift*0.444+10%>" />	
+</sql:update>
+<!-- 8주까지 -->
+<sql:update dataSource="${dataSource}" var="resultSet">
+   INSERT INTO mad_cow VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    <sql:param value="<%=id%>" />
+    <sql:param value="<%=term%>" />
+	<sql:param value="<%=squat*0.444+7.5%>" />
+	<sql:param value="<%=squat*0.444+10%>" />	
+	<sql:param value="<%=bench_press*0.444+7.5%>" />
+	<sql:param value="<%=military_press*0.444+7.5%>" />
+	<sql:param value="<%=barbell_row*0.444+5.5%>" />
+	<sql:param value="<%=deadlift*0.444+15%>" />	
+</sql:update>
+
+
 
 <c:if test="${resultSet>=1}">
 	<c:redirect url="resultInfo.jsp?msg=1" />

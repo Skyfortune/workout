@@ -20,7 +20,6 @@ public class DAO {
 			instance = new DAO();
 		return instance;
 	}	
-	//board 테이블의 레코드 개수
 	public int getListCount(String items, String text) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
