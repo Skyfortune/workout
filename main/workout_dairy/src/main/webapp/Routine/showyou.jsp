@@ -24,7 +24,7 @@
 	<!-- 그냥 무식하게 DB를 생성해서 출력해버릴까 -->
 	<%@ include file="/dbconn.jsp"%>
 			<%
-				String sql = "select * from mad_cow";
+				String sql = "select * from mad_cow_plan ORDER BY term ";
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
@@ -36,7 +36,7 @@
 				
 		<thead>
 			<tr>
-				<th scope="col">1 WEEK</th>
+				<th scope="col"><%=rs.getInt("term") -1%>WEEK</th>
 				<th scope="col">운동1</th>
 				<th scope="col">운동2</th>
 				<th scope="col">운동3</th>
@@ -54,9 +54,9 @@
 		<tbody>
 			<tr class="table-Default">
 				<th scope="row">무게</th>
-				<td>5x5 / <%=rs.getInt("squat") %></td>
-				<td>5x5 / <%=rs.getInt("bench_press") %></td>
-				<td>5x5 / <%=rs.getInt("barbell_row") %></td>
+				<td>5x5 / <%=rs.getInt("squat") %>kg</td>
+				<td>5x5 / <%=rs.getInt("bench_press") %>kg</td>
+				<td>5x5 / <%=rs.getInt("barbell_row") %>kg</td>
 			</tr>
 		</tbody>
 	</table>
@@ -67,7 +67,7 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<th scope="col">2 WEEK</th>
+				<th scope="col"><%=rs.getInt("term") %> WEEK</th>
 				<th scope="col">운동1</th>
 				<th scope="col">운동2</th>
 				<th scope="col">운동3</th>
@@ -75,19 +75,19 @@
 		</thead>
 		<tbody>
 			<tr class="table-active">
-				<th scope="row">1주차</th>
-				<td>운동종목1</td>
-				<td>운동종목2</td>
-				<td>운동종목3</td>
+				<th scope="row">종목</th>
+				<td>스쿼트</td>
+				<td>프레스</td>
+				<td>데드리프트</td>
 			</tr>
 		</tbody>
 
 		<tbody>
 			<tr class="table-Default">
-				<th scope="row">1주차 계속</th>
-				<td>무게/횟수1</td>
-				<td>무게/횟수1</td>
-				<td>무게/횟수1</td>
+				<th scope="row">무게</th>
+				<td>5x5 / <%=rs.getInt("SQUAT2") %>kg</td>
+				<td>5x5 / <%=rs.getInt("MILITARY_PRESS") %>kg</td>
+				<td>1x5 / <%=rs.getInt("deadlift") %>kg</td>
 			</tr>
 		</tbody>
 	</table>

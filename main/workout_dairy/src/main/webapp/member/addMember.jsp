@@ -7,7 +7,8 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
 	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
 	crossorigin="anonymous">
-	
+<!-- 지금은 그냥 멤버하나에 다 넣었지만 나중에는 
+멤버 테이블/운동 이름테이블(다국어 지원용) /워크아웃레코드 테이블로 분류 해서 3테이블을 조인하는 방식으로 만듭시다. -->	
 	
 <script type="text/javascript">
 	function checkForm() {

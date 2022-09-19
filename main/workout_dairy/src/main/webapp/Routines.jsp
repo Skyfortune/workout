@@ -26,6 +26,7 @@
 			%>
 			<div class="col-md-4">
 				
+				<img src="./upload/<%=rs.getString("p_id")%>.jpg" style="width:100%">
 				<h3><%=rs.getString("p_name") %></h3>
         	<p><%=rs.getString("p_category") %>
         	<p><%=rs.getString("p_text") %>
@@ -34,7 +35,7 @@
         	<a class="btn btn-secondary" 
         		href="./routine.jsp?id=<%=rs.getString("p_id")%>" 
         		role="button">자세히</a>
-        	<a class="btn btn btn-success" href="#2" role="button">바로 실행</a>
+        	<a class="btn btn btn-success" href="./Routine/addInfo.jsp" role="button">바로 실행</a>
 			</div>
 			<%
 				}

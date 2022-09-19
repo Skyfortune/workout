@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -7,6 +6,7 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
+
 	String id = (request.getParameter("id") == null) ? "": request.getParameter("id").trim();
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");
@@ -28,6 +28,7 @@
 	String military_press1 = request.getParameter("military_press");
 	int military_press=Integer.parseInt(military_press1);
 	
+
 	Date currentDatetime = new Date(System.currentTimeMillis());
 	java.sql.Date sqlDate = new java.sql.Date(currentDatetime.getTime());
 	java.sql.Timestamp timestamp = new java.sql.Timestamp(currentDatetime.getTime());
@@ -46,10 +47,14 @@
 	<sql:param value="<%=locate_state%>" />
 	<sql:param value="<%=locate_city%>" />
 	<sql:param value="<%=elite%>" />
+	
+	
+	
 	<sql:param value="<%=squat%>" />
 	<sql:param value="<%=deadlift%>" />
 	<sql:param value="<%=bench_press%>" />
 	<sql:param value="<%=military_press%>" />
+	<sql:param value="" />
 </sql:update>
 
 <c:if test="${resultSet>=1}">

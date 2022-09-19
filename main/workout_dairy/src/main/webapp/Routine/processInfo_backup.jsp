@@ -12,6 +12,7 @@
 	String squat1 = request.getParameter("squat");
 	int squat=Integer.parseInt(squat1);
 	
+	
 	String deadlift1 = request.getParameter("deadlift");
 	int deadlift=Integer.parseInt(deadlift1);
 	
@@ -46,11 +47,11 @@
 	<sql:param value="<%=bench_press*0.444%>" />
 	<sql:param value="<%=military_press*0.444%>" />
 	<sql:param value="<%=barbell_row*0.444%>" />
-	<sql:param value="<%=deadlift*0.444%>" />	
+	<sql:param value="<%=deadlift*0.444%>" />
 </sql:update>
 <!-- 4주까지 -->
-<sql:update dataSource="${dataSource}" >
-   INSERT INTO mad_cow_plan VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+<sql:update dataSource="${dataSource}">
+   INSERT INTO mad_cow VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     <sql:param value="<%=id%>" />
     <sql:param value="<%=term-4%>" />
 	<sql:param value="<%=squat*0.444+2.5%>" />
@@ -61,8 +62,8 @@
 	<sql:param value="<%=deadlift*0.444+5%>" />	
 </sql:update>
 <!-- 6주까지 -->
-<sql:update dataSource="${dataSource}" >
-   INSERT INTO mad_cow_plan VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+<sql:update dataSource="${dataSource}">
+   INSERT INTO mad_cow VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     <sql:param value="<%=id%>" />
     <sql:param value="<%=term-2%>" />
 	<sql:param value="<%=squat*0.444+5%>" />
@@ -74,7 +75,7 @@
 </sql:update>
 <!-- 8주까지 -->
 <sql:update dataSource="${dataSource}" var="resultSet">
-   INSERT INTO mad_cow_plan VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+   INSERT INTO mad_cow VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     <sql:param value="<%=id%>" />
     <sql:param value="<%=term%>" />
 	<sql:param value="<%=squat*0.444+7.5%>" />
@@ -83,6 +84,7 @@
 	<sql:param value="<%=military_press*0.444+7.5%>" />
 	<sql:param value="<%=barbell_row*0.444+5.5%>" />
 	<sql:param value="<%=deadlift*0.444+15%>" />	
+	
 </sql:update>
 
 

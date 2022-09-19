@@ -32,6 +32,9 @@
 	%>
 	<div class="container">
 		<div class="row">
+			<div class="col-md-5">
+				<img src="./upload/<%=rs.getString("p_id")%>.jpg" style="width:100%">
+			</div>
 			<div class="col-md-6">
 				<h3><%=rs.getString("p_name")%></h3>
 				<p><%=rs.getString("p_category")%>
@@ -42,8 +45,8 @@
 				<p>
 					<b>상세정보</b> :
 					<%=rs.getString("p_text")%><br>
-					<a href="./workout_info.jsp" class="btn btn-success">루틴 실행</a> <a
-						href="./routine.jsp" class="btn btn-secondary"> 루틴 목록 </a>
+					<a href="./Routine/addInfo.jsp" class="btn btn-success">루틴 실행</a> <a
+						href="./Routines.jsp" class="btn btn-secondary"> 루틴 목록 </a>
 			</div>
 		</div>
 		<hr>

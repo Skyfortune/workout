@@ -21,7 +21,7 @@
 
 			if (msg != null) {
 				if (msg.equals("0"))
-					out.println(" <h2 class='alert alert-danger'>회원정보가 수정되었습니다.</h2>");
+					out.println(" <h2 class='alert alert-danger'>루틴이 수정되었습니다.</h2>");
 				else if (msg.equals("1"))
 					out.println("<h2 class='alert alert-danger'>루틴이 적용되었습니다.</h2>");
 				else if (msg.equals("2")) {

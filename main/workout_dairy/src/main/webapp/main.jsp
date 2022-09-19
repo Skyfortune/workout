@@ -12,12 +12,13 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
-	<%!String greeting = "workout_mate main";
+	<%!String greeting = "workout_mate";
 	String tagline = "better today than yesterday";%>
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">
 				<%=greeting%>
+				<img src="./upload/javier-santos-guzman-9MR78HGoflw-unsplash.jpg" style="width:100%">
 			</h1>
 		</div>
 	</div>
