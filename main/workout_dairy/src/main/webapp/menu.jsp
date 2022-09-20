@@ -43,6 +43,9 @@
             <a class="nav-link" href="./Ranking.jsp">Ranking</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="../Routines.jsp">Board</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link disabled">now making</a>
           </li>
           

@@ -5,8 +5,7 @@
 
 <!-- 루틴의 정보를 입력받습니다. 일단은 Mad-cow 정도가 적용되게 만들고,
 하드코딩으로 하는 한이 있더라도, mad-cow는 적용이 잘 되도록 만들어봅니다. -->
-<!-- 시퀀스를 생성해서 id를 넣지 않더라도, 자동으로 1씩 받도록 만듭니다.
-아이디 별로 구분하는것은 나중에 고민해봅니다. -->
+<!-- 나중에는 어떤 루틴을 하더라도 제작이 되도록 만들 필요가 있습니다. -->
 <!-- 시퀀스 에러인지 페이지가 넘어가지지 않음 -->
 
 <!-- bootstrap ver:4.6 -->
@@ -66,7 +65,18 @@
 			<div class="form-group  row">
 				<label class="col-sm-2 ">이름</label>
 				<div class="col-sm-3">
-					<input name="id" type="text" class="form-control" placeholder="이름" >
+					<input name="id" type="text" class="form-control" 
+					placeholder=
+					<%
+					if(session.getAttribute("sessionId") !=null){
+						String loginId = (String) session.getAttribute("sessionId");
+						out.println(loginId);
+					}
+					else{
+						out.println("이름");
+					}
+					%>
+					 >
 				</div>
 			</div>
 			

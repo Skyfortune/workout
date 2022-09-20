@@ -82,6 +82,7 @@
 				</div>
 			</div>
 			<div class="form-group  row ">
+				<!-- DB를 이용해서 주소를 받아 오는것을 생각해보자 -->
 				<label class="col-sm-2">주소(시/도)</label>
 				<div class="col-sm-10"> 
 					<select name="locate_state">

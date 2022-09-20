@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%-- <%@ page contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,4 +46,4 @@
 
 <%@ include file="footer.jsp"%>
 </body>
-</html>
+</html> --%>
